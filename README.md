@@ -1,117 +1,129 @@
-📌 Customer Churn Prediction using Artificial Neural Network (ANN)
-📖 Project Overview
-Customer churn is one of the major challenges faced by banks and financial institutions.
-This project predicts whether a customer is likely to leave the bank (churn) or stay loyal using an Artificial Neural Network (ANN).
+# 🧠 Customer Churn Prediction App
 
-The project is divided into three major parts:
+An interactive web application that predicts whether a customer will churn (leave a business) using a trained Machine Learning model.  
+Built using **Streamlit**, it accepts customer inputs and provides churn predictions in real time.
 
-ANN Model Training
-Customer Churn Prediction
-Model Deployment using Streamlit
-This solution helps banks take proactive decisions to retain customers by identifying high-risk churn cases.
+---
 
-🧠 Problem Statement
-Build a machine learning model that predicts customer churn based on demographic and financial details such as:
+## 💡 About The Project
 
-Credit Score
-Age
-Balance
-Tenure
-Number of Products
-Active Membership
-Estimated Salary
-🏗️ Project Structure
-Customer-Churn-ANN/
-│
-├── data/
-│   └── churn_dataset.csv
-│
-├── model/
-│   ├── ann_churn_model.h5
-│   ├── scaler.pkl
-│   ├── label_encoder_gender.pkl
-│   └── onehot_encoder_geo.pkl
-│
-├── src/
-│   ├── train_ann_model.py
-│   └── prediction.py
-│
+Customer churn prediction is a critical business problem — it helps companies identify customers who are likely to leave and enables proactive retention strategies.
+
+This application:
+- Loads a trained Artificial Neural Network (ANN) churn model
+- Preprocesses input data using saved encoders and scaler
+- Predicts churn outcome based on user input
+
+---
+
+## 🚀 Features
+
+✔ User-friendly Streamlit interface  
+✔ Real-time prediction for new customer inputs  
+✔ Preprocessing using saved encoders and scaler  
+✔ ANN model for binary classification  
+✔ Easy to extend for new features
+
+---
+
+## 📦 Folder Structure
+
+├── ann_churn_model.h5
 ├── app.py
+├── Churn_Modelling.csv
+├── label_encoder_gender.pkl
+├── onehot_encoder_geo.pkl
+├── prediction.py
 ├── requirements.txt
-└── README.md
-⚙️ Part 1: ANN Model Training
-Model training and preprocessing are handled in train_ann_model.py, which includes:
+├── scaler.pkl
+├── train_ann_model.py
 
-Data loading from churn_dataset.csv
-Label Encoding for Gender
-One-Hot Encoding for Geography
-Feature scaling using StandardScaler
-Splitting data into training and testing sets
-Building and training the ANN
-Saving:
-Trained model → ann_churn_model.h5
-Scaler → scaler.pkl
-Encoders → label_encoder_gender.pkl, onehot_encoder_geo.pkl
-🔮 Part 2: Customer Churn Prediction
-Prediction logic is implemented in prediction.py, which:
 
-Loads the trained ANN model
-Loads the saved encoders and scaler
-Applies the same preprocessing to new customer input
-Predicts whether the customer will:
-Stay Loyal
-Exit (Churn)
-🚀 Part 3: Model Deployment using Streamlit
-The web application is built using Streamlit in app.py, which:
+---
 
-Provides a user-friendly UI
-Takes customer details as input (sliders & dropdowns)
-Sends the input to prediction.py
-Displays churn prediction in real-time
-🛠️ Tech Stack
-Programming Language: Python
-Libraries & Frameworks:
-NumPy
-Pandas
-Scikit-learn
-TensorFlow / Keras
-Model Type: Artificial Neural Network (ANN)
-Web Framework: Streamlit
-IDE & Tools: VS Code, Jupyter Notebook
-Version Control: Git & GitHub
-📊 Dataset
-Bank Customer Churn Dataset (churn_dataset.csv)
-Contains customer demographic and financial information
-Target variable:
-1 → Customer Exited
-0 → Customer Stayed
-▶️ How to Run the Project
-Step 1: Clone the Repository
-git clone https://github.com/satya2337/Customer-Churn-Prediction-App.git
-Step 2: Install Dependencies
+## 🛠️ Built With
+
+This project uses the following major Python libraries:
+
+- [Python](https://www.python.org/)
+- [Streamlit](https://streamlit.io/)
+- [TensorFlow / Keras](https://www.tensorflow.org/)
+- [NumPy](https://numpy.org/)
+- [Pandas](https://pandas.pydata.org/)
+- [Scikit-Learn](https://scikit-learn.org/)
+
+---
+
+## 🧠 How It Works
+
+### 1. Data Preprocessing
+- Categorical features are encoded using label and one-hot encoding
+- Numerical features are scaled
+
+### 2. Model Training
+- An ANN model is trained on customer data
+- Model is saved to disk for reuse
+
+### 3. Prediction
+- Streamlit app loads model + encoders
+- Inputs from user UI
+- Outputs churn result
+
+---
+
+## 🧪 Getting Started
+
+### 🔹 Prerequisites
+
+Make sure you have Python 3.x installed.
+
+### 🔹 Install Dependencies
+
+```bash
 pip install -r requirements.txt
-Step 3: (Optional) Train the Model
-If you want to retrain the ANN model:
-
-python train_ann_model.py
-This will generate:
-
-ann_churn_model.h5
-scaler.pkl
-label_encoder_gender.pkl
-onehot_encoder_geo.pkl
-Step 4: Run the Streamlit App
+🔹 Run The Application
 streamlit run app.py
-📌 Future Enhancements
-Hyperparameter tuning for better accuracy
-Display model accuracy and metrics in the UI
-Deploy the app on cloud platforms (Heroku / AWS / Streamlit Cloud)
-Compare ANN with other ML models
-👤 Author
-Amarjeet Kumar
-📧 Email: amarjeetwith9@gmail.com
-🔗 LinkedIn: https://www.linkedin.com/in/amarjeet-kumar-7843183a6/
-🐙 GitHub: https://github.com/amarjeet-kumar03
+🖼️ Demo Screenshots
+(Optional — Add screenshots of your Streamlit app here)
 
-⭐ Acknowledgement
-Thanks to open-source datasets and libraries that made this project possible.
+🧾 Usage
+Enter customer details (e.g., geography, credit score, age, balance, etc.)
+
+Click Predict
+
+Output will show whether the customer is likely to churn or stay
+
+📈 Results
+This model outputs:
+
+A probability score
+
+A binary prediction (Churn vs No Churn)
+
+Results can be used for business planning and customer retention strategies.
+
+🎯 Who Is This For?
+✔ Students learning ML classification
+✔ Developers building prediction apps
+✔ Business analysts studying churn risk models
+
+📜 License
+This project is for educational purposes.
+
+🙌 Acknowledgements
+Thanks to open-source libraries and community support.
+
+
+---
+
+### Want Extra Enhancements?
+
+I can also generate:
+
+✅ A **project poster / one-pager summary**  
+✅ A **resume project description** (2–3 lines)  
+✅ A **Viva prep sheet**  
+✅ A **requirements.txt** (if not already complete)
+
+Just tell me what you need next! 🚀
+::contentReference[oaicite:0]{index=0}
