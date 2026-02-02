@@ -7,7 +7,10 @@ import pickle
 
 import numpy as np
 
-model=load_model('ann_churn_model.h5')
+model = tf.keras.models.load_model(
+    "ann_churn_model.h5",
+    compile=False
+)
 
 with open('onehot_encoder_geo.pkl', 'rb') as file:
     label_encoder_geo= pickle.load(file)
